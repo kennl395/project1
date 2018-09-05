@@ -1,1 +1,2 @@
 Creative Computing
+Lauren Kennedy
