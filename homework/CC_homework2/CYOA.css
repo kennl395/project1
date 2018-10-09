@@ -1,0 +1,45 @@
+body{
+	background-color: #f5d147;
+	text-align: center;
+}
+h3{
+	text-align: center;
+	color: #222;
+	font-weight: bolder;
+	font-style: italic;
+	font-family: Helvetica;
+	padding: 90px 10px 10px 10px;
+}	
+#story{
+	text-align: left;
+	font-family: "Courier New", sans-serif;
+	font-weight: 500;
+	color: #fff;
+	position: relative;
+	max-width: 480px;
+	padding: 0% 0% 0% 35%;
+}
+img{
+	opacity: .8;
+	padding: 2px 0px 2px 0px;
+	min-width: 350px
+}
+a{
+	color:#222;
+	font-family: arial;
+	font-weight: lighter;
+	font-style: italic;
+	display: inline-block;
+	padding: 8px 12px 8px 12px;
+	text-decoration: none;
+	font-size: 12px;
+	border-style: solid;
+	border-width: 2px 2px 2px 2px;
+	border-radius: 15px 15px 15px 15px;
+	border-color: #222
+
+}
+a:hover{
+	background-color: #222;
+	color:#f5d147;
+}
