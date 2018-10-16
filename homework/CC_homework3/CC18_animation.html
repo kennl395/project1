@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Josef Albers</title>
+<style>
+html, body{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0px;
+}
+@keyframes twirla{
+	50%{
+		transform: rotate(180deg);
+	}
+	100%{
+		transform:initial;
+	}
+}
+@keyframes twirlb{
+	50%{
+		transform: rotate(-180deg);
+	}
+	100%{
+		transform:initial;
+	}
+}
+@keyframes twirlc{
+	50%{
+		transform: rotate(180deg);
+	}
+	100%{
+		transform:initial;
+	}
+}
+#rectangle1{
+	position: absolute;
+	left: 40%;
+	top: 15%;
+	animation: twirl 3s infinite;
+	animation-delay: 1.5s;
+	animation-name: twirla;
+	background-color: #2e346d;
+	width: 20vmin;
+	height: 35vmin;
+	opacity: .5;
+}
+#rectangle3{
+	position: absolute;
+	left: 38%;
+	top: 45%;
+	animation: twirl 5s infinite;
+	animation-delay: .5s;
+	animation-name: twirlb;
+	background-color: #2e346d;
+	width: 35vmin;
+	height: 20vmin;
+	opacity: .5;
+}
+#rectangle4{
+	position: absolute;
+	left: 50%;
+	top: 55%;
+	animation: twirl 4s infinite;
+	animation-name: twirlc;
+	background-color: #2e346d;
+	width: 20vmin;
+	height: 35vmin;
+	opacity: .5;
+}
+#rectangle2{
+	width: 600px;
+	height: 800px;
+	background-color: #9b95c3;
+}
+</style>
+</head>
+<body>
+	<div id="rectangle1"></div>
+	<div id="rectangle2"></div>
+	<div id="rectangle3"></div>
+	<div id="rectangle4"></div>
+</body>
+</html>
