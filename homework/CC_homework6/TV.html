@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style>
+html,body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	margin: 0;
+	background-color: #fcf2da;
+}
+img{
+	width: 80vmax;
+	height: 40vmax;
+}
+</style>
+</head>
+<body>
+	<img src="channels/TV_1.gif" id="gifs">
+	<div></div>
+
+<script>
+var myGifs = document.getElementById("gifs");
+var channels = ["channels/TV_1.gif", "channels/TV_2.gif", "channels/TV_7.gif", "channels/TV_4.gif", "channels/TV_5.gif", "channels/TV_16.gif", "channels/TV_11.gif", "channels/TV_9.gif", "channels/TV_6.gif", "channels/TV_12.gif", "channels/TV_8.gif", "channels/TV_10.gif", "channels/TV_13.gif", "channels/TV_14.gif", "channels/TV_15.gif"];
+var first = 1;
+
+function change(){
+document.getElementById("gifs").src = channels[first];
+first ++; 
+
+	if(first >= 15){
+	first = 1; 
+	}
+	if(first < 1){
+	first = 15;
+	}
+}
+
+function checkKey(e){
+	e = e || window.event;
+	if(e.keyCode === 38){
+		first++;
+	}
+	if(e.keyCode === 40){
+		first--;  
+	}
+}
+
+document.onkeydown = checkKey;
+document.onkeydown = change;
+</script>
+
+</body>
+</html>
