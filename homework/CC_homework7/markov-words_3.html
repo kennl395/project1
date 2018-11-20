@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="file" id="open-file">
+<h1 id="poem"></h1>
+<script>
+
+// load a file
+var reader = new FileReader();
+
+document.getElementById("open-file").onchange = function(){
+	reader.readAsText(this.files[0]);
+}
+
+reader.onload = function(event){
+//document.body.innerHTML = event.target.result;
+//event.target.result is a string (the book)
+	buildDictionary(event.target.result);
+	markov();
+}
+
+// now the file has been loaded
+var dictionary = {};
+
+function buildDictionary(text){
+	//console.log(text);
+	var words = text.split(/\s+/);
+	//console.log(words);
+	//loop over every word, put it in the dictionary
+	var i = 0;
+	while(i < words.length - 1){
+		// get the word from the word array
+		var thisword = words[i];
+		var nextword = words[i+1];
+		// if we're seeing this letter for the first time, create an empty array
+		if(dictionary[thisword] == undefined){
+			dictionary[thisword] = [];
+		}
+		// add the word into the dictionary, at the first letter's spot, add to the array
+		dictionary[thisword].push(nextword);
+		i = i + 1;
+	}
+	
+	//console.log(dictionary);
+}
+function randomInt(max){
+	return parseInt(Math.random() * max);
+}
+ 
+var phrase = "";
+function markov(){
+	var andWords = dictionary["and"];
+	console.log(andWords);
+	while(phrase.length < 500){
+	var thisword = andWords[ randomInt(andWords.length) ];
+	// andWords.push(thisword);
+	phrase = phrase + " " + thisword;
+	phrase = phrase + " what is real";
+	phrase = phrase + " is actually";
+	}
+
+	// var poem = console.log(phrase);
+	// document.getElementById("poem").innerHTML = poem;
+
+
+	var poem = phrase
+	document.getElementById("poem").innerHTML = poem;
+}
+
+
+	// loop end
+
+</script>
+</body>
+</html>
